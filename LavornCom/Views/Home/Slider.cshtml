@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+
+    ViewBag.Title = "Home";
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("Content/js")
+@Styles.Render("~/Content/css/animate.css")
+@Styles.Render("~/Content/css/animate.css")
+@Styles.Render("~/Content/css/font-awesome.min.css")
+@Styles.Render("~/Content/css/main.css")
+@Styles.Render("~/Content/css/prettyPhoto.css")
+<script src="/Content/js/jquery.js"></script>
+<script src="/Content/js/bootstrap.min.js"></script>
+<script src="/Content/js/jquery.scrollUp.min.js"></script>
+<script src="/Content/js/price-range.js"></script>
+<script src="/Content/js/jquery.prettyPhoto.js"></script>
+<script src="/Content/js/main.js"></script>
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>Lavorn</span>-Giyim</h1>
+                                <h2>En İyi Fiyat Garantisi</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Şimdi Al</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/Content/images/home/girl1.jpg" class="girl img-responsive" style="width:290px;margin:0px -110px; " alt="" />
+                                <img src="/Content/images/home/pricing.png" class="pricing" style="width:105px;margin:0px 150px;" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Lavorn</span>-Giyim</h1>
+                                <h2>En Kaliteli Ürünler En İyi Fiyat İle</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Şimdi Al</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/Content/images/home/girl2.jpg" class="girl img-responsive" style="width:290px;margin:0px -110px; " alt="" />
+                                <img src="/Content/images/home/pricing.png" class="pricing" style="width:105px;margin:0px 150px;" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Lavorn</span>-Giyim</h1>
+                                <h2>En Kaliteli Ürünler En İyi Fiyat İle</h2>
+                            
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <button type="button" class="btn btn-default get">Şimdi Al</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/Content/images/home/girl3.jpg" class="girl img-responsive" style="width:290px;margin:0px -110px; " alt="" />
+                                <img src="/Content/images/home/pricing.png"  class="pricing" alt="" style="width:105px;margin:0px 150px;" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs"style="padding-left:800px;"  data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs"  data-slide="next" >
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+

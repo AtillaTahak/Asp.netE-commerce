@@ -1,0 +1,120 @@
+﻿@model IEnumerable<LavornCom.Models.Urunler>
+
+@{
+    ViewBag.Title = "Admin/Ürünler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+Ürünler
+</h2>
+
+<p>
+    @Html.ActionLink("Ürün Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunKodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAd)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimYolu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miktar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimId)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.İndirimOran)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.KdvOran)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oy)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Markalar.MarkaAd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunKodu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAd)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResimYolu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miktar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResimId)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.KdvOran)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToplamRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategoriler.KategoriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Markalar.MarkaAd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrunId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrunId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrunId })
+        </td>
+    </tr>
+}
+
+</table>

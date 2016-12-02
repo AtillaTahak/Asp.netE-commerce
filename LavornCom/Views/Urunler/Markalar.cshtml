@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LavornCom.Models.Urunler>
+@{
+    ViewBag.Title = "Markalar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:darkorange">Markalar</h2>
+<hr style="border-color:darkorange;border-width :5px" />
+
+<body>
+
+    @foreach (var item1 in Model)
+    {
+
+
+        <div class="col-sm-3">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="~/Content/images/shop/@item1.ResimYolu" alt="">
+                        <h2>@item1.Fiyat.ToString("#,##0.00") ₺</h2>
+                        <p>@item1.UrunAd</p>
+
+                        <a href="~/Urunler/Detay/@item1.UrunId" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>İncele</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</body>

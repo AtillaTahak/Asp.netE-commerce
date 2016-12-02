@@ -1,0 +1,26 @@
+﻿@model IEnumerable<LavornCom.Models.Yorumlar>
+@{
+    Layout = null;
+}
+<h3 style="color:darkorange">Yorumlar</h3>
+<hr style="border-color:darkorange;border-width:5px" />
+<div class="col-sm-12">
+    @foreach (var item in Model)
+    {
+
+        <ul>
+            <li><a href=""><i class="fa fa-user"></i>@item.YorumcuAd</a></li>
+            <li><a href=""><i class="fa fa-clock-o"></i>Saat</a></li>
+            <li><a href=""><i class="fa fa-calendar-o"></i>Tarih</a></li>
+        </ul>
+
+        <p>@item.Yorum</p>
+        <hr style="border-color:orange" />
+
+
+    }
+
+</div>
+
+<h3 style="color:darkorange">Yorumunuz :</h3>
+<hr style="border-color:darkorange;border-width:5px" />

@@ -1,0 +1,22 @@
+﻿@model  IEnumerable<LavornCom.Models.Markalar>
+@{
+    ViewBag.Title = "MarkaGetir";
+    Layout = null;
+}
+
+@*<div class="col-sm-3">
+    <div class="left-sidebar">*@
+
+        <h2>Markalar</h2>
+
+        @*<div class="panel-group category-products" id="accordian">*@
+
+            <!--category-productsr-->
+            @foreach (var item1 in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="~/Urunler/Markalar/@item1.MarkaId">@item1.MarkaAd</a></h4>
+                    </div>
+                </div>
+            }

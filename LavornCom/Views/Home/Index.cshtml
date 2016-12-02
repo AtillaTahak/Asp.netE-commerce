@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Anasayfa - Lavorn";
+    Layout = ("~/Views/Shared/_Layout.cshtml");
+}
+
+
+
+@*<h1>@Session["sepet"]</h1>*@
+@{Html.RenderAction("Kategoriler", "Home");}
+@{Html.RenderAction("Slider", "Home");}
+@{Html.RenderAction("UrunGetir", "Urunler");}
+
+@*<div>
+
+</div>
+<div>
+@{ Html.RenderAction("Index", "Sepet");}
+</div>*@

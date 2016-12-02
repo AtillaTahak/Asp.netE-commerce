@@ -1,0 +1,141 @@
+﻿@model LavornCom.Models.Urunler
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.RenderAction("Kategoriler", "Home");}
+
+@*@{Html.RenderAction("yeni","Urunler")}*@
+
+
+
+
+
+
+<div class="product-details">
+    <!--product-details-->
+    <div class="col-sm-5">
+        <div class="view-product">
+            @*@{  LavornCom.Models.lavornDbEntities db = new LavornCom.Models.lavornDbEntities();
+                       var resimler = db.Resimler.Where(x => x.UrunId == Model.ResimId);
+                   }
+                @foreach (var item in resimler)
+                {*@
+            <img src="/Content/images/shop/@Model.ResimYolu" alt="" style="width:auto;height:auto;">
+            @*}*@
+
+
+            <h3>Yakınlaştır</h3>
+        </div>
+        <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item">
+                    <a href=""><img src="/Content/images/product-details/similar1.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar2.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar3.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href=""><img src="/Content/images/product-details/similar1.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar2.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar3.jpg" alt=""></a>
+                </div>
+                <div class="item active">
+                    <a href=""><img src="/Content/images/product-details/similar1.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar2.jpg" alt=""></a>
+                    <a href=""><img src="/Content/images/product-details/similar3.jpg" alt=""></a>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left item-control" href="#similar-product" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="right item-control" href="#similar-product" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+
+    </div>
+    <div class="col-sm-7">
+        <div class="product-information">
+            <!--/product-information-->
+            @*<img src="/Content/images/product-details@item.ResimUrl" class="newarrival" alt="">*@
+     
+            <h5>Ürün Kodu : @Model.UrunId</h5>
+            <h1>@Model.UrunAd</h1>
+
+            <p>Açıklama : @Model.UrunAciklama </p>
+            <p>Kategori : @Model.Kategoriler.KategoriAd</p>
+
+
+            <span>
+                <span style="color:orange;">Ürün Fiyatı : @Model.Fiyat.ToString("#,##0.00") ₺ (KDV Dahil)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                &nbsp;
+                &nbsp;
+                <label>Adet : </label>
+                <select style="width:50px;" name="adet"  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+
+                @*<input type="text" value="1" style="width:auto;">*@
+                @*<input class="wow fadeIndown animated" data-wow-delay=".6s" type="text" Name="Urun" placeholder="@Model.UrunAd " required="">*@
+                <button type="button" class="btn btn-fefault cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    @Html.ActionLink("Sepete At", "SepeteEkle", "Sepet", new { id = Model.UrunId },null)
+                </button>
+            </span>
+            <p><b>Stok :</b> @Model.Miktar</p>
+            <p><b>Durum :</b>  Sıfır</p>
+            <p><b>Size</b> : @Model.Size </p>
+            <a href=""><img src="/Content/images/product-details/share.png" class="share img-responsive" alt=""></a>
+        </div><!--/product-information-->
+    </div>
+</div>
+@*@{Html.RenderAction("", " ")};*@
+
+    <div class="category-tab shop-details-tab">
+        <div class="tab-pane fade active in" id="reviews">
+
+            <div class="tab-content">
+                <div class="col-sm-12">
+
+
+                    @{ Html.RenderAction("YorumlarListe", "Urunler");}
+
+                    <form action="/Urunler/Yorumlar" method="post">
+                        <span>
+                            <input type="text" placeholder="İsminiz" name="yorumcuad" class="form-control">
+                            <input type="email" placeholder="Mail Adresiniz" name="mailadres" class="form-control">
+                            <input type="hidden" placeholder="" name="urunıd" value="@Model.UrunId" readonly class="form-control">
+                        </span>
+                        <textarea name="yorum" class="form-control"></textarea>
+                        <b>Rating: </b> <img src="/Content/images/product-details/rating.png" alt="">
+                        <button type="submit" class="login-form" >
+                            Gönder
+                        </button>
+                       
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+</div>
+@*@{ Html.RenderAction("Yorumlar", "Urunler");}*@
+
+
+
+
+

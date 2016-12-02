@@ -1,0 +1,187 @@
+﻿@model LavornCom.Models.Urunler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Urunler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunKodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunKodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResimYolu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResimYolu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miktar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miktar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResimId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResimId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteUrunId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteUrunId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İndirimOran)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İndirimOran)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlisFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlisFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaketAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaketAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RefPaketId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefPaketId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirimPaket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirimPaket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KdvOran)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KdvOran)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToplamRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToplamRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriler.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Markalar.MarkaAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Markalar.MarkaAd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UrunId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

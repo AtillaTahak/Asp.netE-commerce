@@ -1,0 +1,242 @@
+﻿
+@model IEnumerable<LavornCom.Models.Urunler>
+
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+@*@{ Html.RenderAction("KategorilerLeft", "Home");
+}*@
+
+<div class="container body-content">
+
+
+
+    <h2>Log in.</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <form action="/Account/Login" class="form-horizontal" method="post" role="form" novalidate="novalidate">
+                    <input name="__RequestVerificationToken" type="hidden" value="WQrfXCarfn3cK97Wuvi_jQo35YjycEifrirK8WXRru6fG2ho6yFjf_3IAne8DDZHlcihj3wp8FQvGWoVSeVU33p56VGaALCFSBxCV1ipuZ41">                <h4>Use a local account to log in.</h4>
+                    <hr>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="Email">Email</label>
+                        <div class="col-md-10">
+                            <input class="form-control" data-val="true" data-val-email="Email alanı geçerli bir e-posta adresi değil." data-val-required="Email alanı gereklidir." id="Email" name="Email" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="Password">Password</label>
+                        <div class="col-md-10">
+                            <input class="form-control" data-val="true" data-val-required="Password alanı gereklidir." id="Password" name="Password" type="password">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                <input data-val="true" data-val-required="Remember me? alanı gereklidir." id="RememberMe" name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
+                                <label for="RememberMe">Remember me?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default">
+                        </div>
+                    </div>
+                    <p>
+                        <a href="/Account/Register">Register as a new user</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+
+                <h4>Use another service to log in.</h4>
+                <hr>
+                <div>
+                    <p>
+                        There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+
+
+    <hr>
+    <footer>
+        <p>© 2016 - My ASP.NET Application</p>
+    </footer>
+</div>
+<div class="features_items">
+    <!--features_items-->
+    <h2 class="title text-center">Özel Ürünler</h2>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product1.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Satın Al</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Satın Al</a>
+                    </div>
+                </div>
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product2.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product3.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product4.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                </div>
+                <img src="/Content/images/home/new.png" class="new" alt="">
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product5.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                </div>
+                <img src="/Content/images/home/sale.png" class="new" alt="">
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    <img src="/Content/images/home/product6.jpg" alt="">
+                    <h2>$56</h2>
+                    <p>Easy Polo Black Edition</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>$56</h2>
+                        <p>Easy Polo Black Edition</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+@{ Html.RenderAction("OnerilenUrunler", "Home"); }
+

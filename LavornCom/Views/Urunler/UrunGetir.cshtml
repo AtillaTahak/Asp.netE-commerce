@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LavornCom.Models.Urunler>
+
+@{
+
+    ViewBag.Title = "";
+    Layout = null;
+}
+<body>
+
+
+
+   @* <div class="features_items" style="width:auto;">
+    <!--features_items-->
+    <h2 class="title text-center">Özel Ürünler</h2>
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center">
+                    @foreach (var item in Model)
+            {
+                        <img src="~/Content/images/shop/@item.ResimYolu" alt="">
+                        <h2>@item.Fiyat</h2>
+                        <p>@item.UrunAd</p>
+                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Satın Al</a>
+
+
+                    <div class="choose">
+                        <ul class="nav nav-pills nav-justified">
+                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                        </ul>
+
+                    </div>
+                    }
+*@                  @foreach (var item in Model)
+{ <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="~/Content/images/shop/@item.ResimYolu" alt="">
+                                    <h2>@item.Fiyat.ToString("#,##0.00") ₺</h2>
+                                    <p>@item.UrunAd</p>
+                                    <a href="~/Urunler/Detay/@item.UrunId" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>İncele</a>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+}
+
+
+  
+    
+</body>
+
+@*@{ Html.RenderAction("OnerilenUrunler", "Home"); }*@
+

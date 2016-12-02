@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LavornCom.Models.SepetUrunu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:darkorange;">Sepet</h2>
+<hr style="border-color:darkorange;border-width:5px" />
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="table-responsive cart_info">
+    <table class="table table-condensed">
+        <tr>
+            <th class="description">
+                Ürünler
+                @*@Html.DisplayNameFor(model => model.UrunAdı)*@
+               
+            </th>
+           
+            <th class="cart_price">
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th class="cart_quantity">
+                @Html.DisplayNameFor(model => model.Adet)
+            </th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="cart_product">
+                
+                    @Html.DisplayFor(modelItem => item.UrunAdı)
+                  
+                </td>
+    
+                <td class="cart_price">
+                    @Html.DisplayFor(modelItem => item.Fiyat)
+                   
+                </td>
+                <td class="cart_quantity">
+                    @Html.DisplayFor(modelItem => item.Adet)
+
+                </td>
+              
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    @Html.ActionLink("Sil", "SepettenKaldir", new { id = item.UrunId })
+
+
+                </td>
+            
+            </tr>
+        }
+
+    </table>
+    </div>

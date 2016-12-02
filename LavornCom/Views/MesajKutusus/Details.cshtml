@@ -1,0 +1,51 @@
+﻿@model LavornCom.Models.MesajKutusu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MesajKutusu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MailAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MailAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mesaj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mesaj)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MesajId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

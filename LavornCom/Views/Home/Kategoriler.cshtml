@@ -1,0 +1,76 @@
+﻿@model IEnumerable<LavornCom.Models.Kategoriler>
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("Content/js")
+@Styles.Render("~/Content/css/animate.css")
+@Styles.Render("~/Content/css/animate.css")
+@Styles.Render("~/Content/css/font-awesome.min.css")
+@Styles.Render("~/Content/css/main.css")
+@Styles.Render("~/Content/css/prettyPhoto.css")
+<script src="/Content/js/jquery.js"></script>
+<script src="/Content/js/bootstrap.min.js"></script>
+<script src="/Content/js/jquery.scrollUp.min.js"></script>
+<script src="/Content/js/price-range.js"></script>
+<script src="/Content/js/jquery.prettyPhoto.js"></script>
+<script src="/Content/js/main.js"></script>
+
+<a href="/Sepet/Index">
+
+    <img src="~/Content/images/sepetson.png" style="width:185px; margin-left:60px;" /></a>
+    <div>
+        &nbsp;
+        &nbsp;
+
+    </div>
+    <div></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+
+                    <h2 style="color:darkorange">Kategoriler</h2>
+
+
+
+                    <div class="panel-group category-products" id="accordian">
+
+                        <!--category-productsr-->
+                        @foreach (var item in Model)
+                        {
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="~/Urunler/Kategoriler/@item.KategoriId">@item.KategoriAd</a></h4>
+
+                                </div>
+                                <hr style="border-color:darkorange;border-width:5px" />
+                            </div>
+
+                        }
+
+
+                    </div><!--/category-products-->
+
+                    @{Html.RenderAction("Markalar", "Home");}
+
+                    <div class="price-range">
+                        <!--price-range-->
+
+                    </div><!--/price-range-->
+
+                    <div class="shipping text-center">
+                        <!--shipping-->
+                        <img src="/Content/images/home/shipping.jpg" alt="" />
+                    </div><!--/shipping-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                @*@RenderBody()*@
+
+
+                <div class="category-tab">
+                    <!--/category-tab-->

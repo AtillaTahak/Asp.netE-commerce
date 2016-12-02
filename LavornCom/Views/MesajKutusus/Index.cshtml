@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LavornCom.Models.MesajKutusu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Mesaj Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MailAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mesaj)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Isim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MailAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mesaj)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.MesajId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.MesajId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.MesajId })
+        </td>
+    </tr>
+}
+
+</table>
