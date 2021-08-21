@@ -14,11 +14,9 @@ namespace LavornCom.Models
     
     public partial class Resimler
     {
-        public int ResimId { get; set; }
+        public int Id { get; set; }
         public string ResimAd { get; set; }
-        public int UrunId { get; set; }
-        public string ResimYol { get; set; }
-    
-        public virtual Urunler Urunler { get; set; }
+        public string UrunId { get; set; }
+        public string ResimUrl { get; set; }
     }
 }

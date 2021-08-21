@@ -17,41 +17,24 @@ namespace LavornCom.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Urunler()
         {
-            this.Resimler = new HashSet<Resimler>();
-            this.Sepet = new HashSet<Sepet>();
             this.Yorumlar1 = new HashSet<Yorumlar>();
         }
     
-        public int UrunId { get; set; }
-        public string UrunKodu { get; set; }
+        public int Id { get; set; }
         public string UrunAd { get; set; }
-        public string Link { get; set; }
-        public string UrunAciklama { get; set; }
+        public string Aciklama { get; set; }
+        public decimal UrunFiyat { get; set; }
+        public int Stok { get; set; }
+        public bool IsActive { get; set; }
+        public System.DateTime EklenmeTarihi { get; set; }
         public int KategoriId { get; set; }
-        public decimal Fiyat { get; set; }
-        public string ResimYolu { get; set; }
-        public int Miktar { get; set; }
-        public string Size { get; set; }
-        public Nullable<bool> IsActive { get; set; }
-        public int ResimId { get; set; }
-        public Nullable<int> SiteUrunId { get; set; }
-        public Nullable<int> İndirimOran { get; set; }
-        public Nullable<decimal> AlisFiyat { get; set; }
-        public string PaketAdi { get; set; }
-        public Nullable<int> RefPaketId { get; set; }
-        public string BirimPaket { get; set; }
-        public Nullable<int> KdvOran { get; set; }
-        public Nullable<int> Oy { get; set; }
-        public string ToplamRating { get; set; }
         public int MarkaId { get; set; }
         public Nullable<int> YorumId { get; set; }
+        public string ResimUrl { get; set; }
+        public Nullable<int> ResimId { get; set; }
     
         public virtual Kategoriler Kategoriler { get; set; }
         public virtual Markalar Markalar { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Resimler> Resimler { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sepet> Sepet { get; set; }
         public virtual Yorumlar Yorumlar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Yorumlar> Yorumlar1 { get; set; }

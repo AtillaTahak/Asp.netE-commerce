@@ -12,7 +12,7 @@ namespace LavornCom.Models
         public string UrunAdı { get; set; }
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
-
-
+        public string Renk { get; set; }
+        public string Size { get; set; }
     }
 }

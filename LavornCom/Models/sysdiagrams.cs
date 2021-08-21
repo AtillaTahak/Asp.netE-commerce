@@ -12,12 +12,12 @@ namespace LavornCom.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MesajKutusu
+    public partial class sysdiagrams
     {
-        public int MesajId { get; set; }
-        public string Isim { get; set; }
-        public string MailAdres { get; set; }
-        public string Telefon { get; set; }
-        public string Mesaj { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

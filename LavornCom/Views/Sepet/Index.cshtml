@@ -26,12 +26,19 @@
             <th class="cart_quantity">
                 @Html.DisplayNameFor(model => model.Adet)
             </th>
+            <th class="cart_quantity">
+                @Html.DisplayNameFor(model => model.Renk)
+            </th>
+            <th class="cart_quantity">
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
             
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
+                
                 <td class="cart_product">
                 
                     @Html.DisplayFor(modelItem => item.UrunAdı)
@@ -46,12 +53,18 @@
                     @Html.DisplayFor(modelItem => item.Adet)
 
                 </td>
-              
+                <td class="cart_price">
+                    @Html.DisplayFor(modelItem=>item.Renk)
+                </td>
+                <td class="cart_price">
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
                 <td>
                     @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                  
                     @Html.ActionLink("Sil", "SepettenKaldir", new { id = item.UrunId })
-
+                 
 
                 </td>
             
@@ -59,4 +72,16 @@
         }
 
     </table>
+  @*@Html.ActionLink("Sepeti Boşalt", "SepetiTemizle","Sepet")*@
+    <a href="/Sepet/SepetiTemizle">
+        <img src="~/Content/images/sepetibosalt.png" style="width:125px;" />
+    </a>
     </div>
+@{decimal toplam = 0.0m;}
+@foreach (var item in Model)
+{
+    toplam += item.Fiyat * item.Adet;
+
+}
+<p class="product-details" style="color:orange;">Sepet Toplamı : @toplam.ToString("#,##0.00") ₺ (KDV Dahil)</p>
+

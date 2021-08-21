@@ -11,7 +11,7 @@ namespace EmreGiyim.Controllers
 {
     public class UrunlerController : Controller
     {
-        lavornDbEntities db = new lavornDbEntities();
+        DB_109003_lavornEntities db = new DB_109003_lavornEntities();
 
         // GET: UrunDetay
         public ActionResult Index()
@@ -21,13 +21,13 @@ namespace EmreGiyim.Controllers
        
         public ActionResult Detay(int id)
         {
-            var uruns = db.Urunler.FirstOrDefault(x => x.UrunId == id);
+            var uruns = db.Urunler.FirstOrDefault(x => x.Id == id);
             return View(uruns);
 
         }
         public ActionResult Kategoriler(int id)
         {
-            var Kategori = db.Urunler.Where(x => x.KategoriId == id);
+            var Kategori = db.Urunler.Where(x => x.Id == id);
             return View(Kategori);
 
         }
@@ -39,15 +39,15 @@ namespace EmreGiyim.Controllers
         }
         public ActionResult Markalar(int id)
         {
-            var markalar = db.Urunler.Where(x => x.MarkaId == id);
+            var markalar = db.Urunler.Where(x => x.Id == id);
             return View(markalar);
         }
 
-        public ActionResult Yorumlar(string yorum, string mailadres, string yorumcuad, int urunıd)
+        public ActionResult Yorumlar(/*string yorum,*/ string mailadres, string yorumcuad, int urunıd)
         {
             Yorumlar yrm = new Yorumlar();
-            yrm.Yorum = yorum;
-            yrm.MailAdres = mailadres;
+            //yrm. = yorum;
+            yrm.Mail = mailadres;
             yrm.YorumcuAd = yorumcuad;
             yrm.UrunId = urunıd;
             //yrm.Urunler.Where(x => x.UrunId ==ıs) == urunıd;
@@ -56,19 +56,19 @@ namespace EmreGiyim.Controllers
             return View();
 
         }
-        public ActionResult YorumlarListe(int id)
-        { var sonuc = db.Yorumlar.Where(x => x.Yorum == null);
-            if (sonuc==null )
-            {
-                string hata = "Henüz hiç yorum yapılmamış";
-                ViewBag.hata = hata;
-                return View(hata);
-            }
-            else { 
-            var yorumlarliste = db.Yorumlar.Where(x => x.UrunId ==id ).ToList();
-            return View(yorumlarliste);
-            }
-        }
+        //public ActionResult YorumlarListe(int id)
+        //{ var sonuc = db.Yorumlar.Where(x => x.Yorum == null);
+        //    if (sonuc==null )
+        //    {
+        //        string hata = "Henüz hiç yorum yapılmamış";
+        //        ViewBag.hata = hata;
+        //        return View(hata);
+        //    }
+        //    else { 
+        //    var yorumlarliste = db.Yorumlar.Where(x => x.UrunId ==id ).ToList();
+        //    return View(yorumlarliste);
+        //    }
+        //}
         //[Authorize]
         //[HttpPost]
         //public ActionResult Detay(int id, string UrunAdi, decimal Fiyat, int Adet,string mail)

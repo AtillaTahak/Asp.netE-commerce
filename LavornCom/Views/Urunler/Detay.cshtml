@@ -21,7 +21,7 @@
                    }
                 @foreach (var item in resimler)
                 {*@
-            <img src="/Content/images/shop/@Model.ResimYolu" alt="" style="width:auto;height:auto;">
+            <img src="/Content/images/home/@Model.ResimUrl" alt="" style="width:auto;height:auto;">
             @*}*@
 
 
@@ -63,75 +63,124 @@
         <div class="product-information">
             <!--/product-information-->
             @*<img src="/Content/images/product-details@item.ResimUrl" class="newarrival" alt="">*@
-     
-            <h5>Ürün Kodu : @Model.UrunId</h5>
+
+            <h5>Ürün Kodu : @Model.Id</h5>
             <h1>@Model.UrunAd</h1>
 
-            <p>Açıklama : @Model.UrunAciklama </p>
+            <p>Açıklama : @Model.Aciklama </p>
             <p>Kategori : @Model.Kategoriler.KategoriAd</p>
+
+            <p><b>Stok :</b> @Model.Stok</p>
+            <p><b>Durum :</b>  Sıfır</p>
+            @*<p><b>Size</b> : @Model.Size </p>*@
+
+
 
 
             <span>
-                <span style="color:orange;">Ürün Fiyatı : @Model.Fiyat.ToString("#,##0.00") ₺ (KDV Dahil)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style="color:orange;">Ürün Fiyatı : @Model.UrunFiyat.ToString("#,##0.00") ₺ (KDV Dahil)@*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 &nbsp;
-                &nbsp;
-                <label>Adet : </label>
-                <select style="width:50px;" name="adet"  >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                </select>
+                &nbsp;*@
+              </span>
 
                 @*<input type="text" value="1" style="width:auto;">*@
                 @*<input class="wow fadeIndown animated" data-wow-delay=".6s" type="text" Name="Urun" placeholder="@Model.UrunAd " required="">*@
-                <button type="button" class="btn btn-fefault cart">
-                    <i class="fa fa-shopping-cart"></i>
-                    @Html.ActionLink("Sepete At", "SepeteEkle", "Sepet", new { id = Model.UrunId },null)
-                </button>
-            </span>
-            <p><b>Stok :</b> @Model.Miktar</p>
-            <p><b>Durum :</b>  Sıfır</p>
-            <p><b>Size</b> : @Model.Size </p>
-            <a href=""><img src="/Content/images/product-details/share.png" class="share img-responsive" alt=""></a>
+
+                <form action="/Sepet/SepeteEkle" method="post">
+
+                  
+                     <span>
+
+                       
+                       
+                        <h2 style="color:orange;">Adet : </h2>
+                        <select @*style="width:55px;height:55px;"*@ name="adet"class ="btn btn-default dropdown-toggle usa">
+                            <option style="width:45px;height:25px;">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                       </span>
+                        @*<input type="text" placeholder="1" name="adet" class="form-control">*@
+                      <span>
+                            <h2 style="color:orange;">Renk : </h2>  
+                            @*<input type="text" placeholder="1" name="renk" class="form-control">*@
+                        <select  name="renk"class ="btn btn-default dropdown-toggle usa">
+                            <option>Mavi</option>
+                            <option>Sarı</option>
+                            <option>Siyah</option>
+                            </select>
+                          </span>
+                    <span>
+                        <h2 style="color:orange;">Size : </h2>
+                        <select name="size"class ="btn btn-default dropdown-toggle usa">
+                            <option>X</option>
+                            <option>S</option>
+                            <option>M</option>
+                        </select>
+                        @*<input type="text" placeholder="1" name="size" class="form-control">*@
+                    </span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>
+                        <button type="submit" class="btn btn-fefault cart" style="background-color:orange;color:white;">
+                            Sepete Ekle
+                        </button>
+
+                    </span>
+
+
+                            <input type="hidden" name="id" value="@Model.Id" />
+
+
+
+                  
+            </form>
         </div><!--/product-information-->
     </div>
 </div>
+               
+
+
+@*<button type="button" class="btn btn-fefault cart">
+        <i class="fa fa-shopping-cart"></i>
+        @Html.ActionLink("Sepete At", "SepeteEkle", "Sepet", new { id = Model.UrunId },null)
+    </button>*@
+
 @*@{Html.RenderAction("", " ")};*@
 
-    <div class="category-tab shop-details-tab">
-        <div class="tab-pane fade active in" id="reviews">
+<div class="category-tab shop-details-tab">
+    <div class="tab-pane fade active in" id="reviews">
 
-            <div class="tab-content">
-                <div class="col-sm-12">
-
-
-                    @{ Html.RenderAction("YorumlarListe", "Urunler");}
-
-                    <form action="/Urunler/Yorumlar" method="post">
-                        <span>
-                            <input type="text" placeholder="İsminiz" name="yorumcuad" class="form-control">
-                            <input type="email" placeholder="Mail Adresiniz" name="mailadres" class="form-control">
-                            <input type="hidden" placeholder="" name="urunıd" value="@Model.UrunId" readonly class="form-control">
-                        </span>
-                        <textarea name="yorum" class="form-control"></textarea>
-                        <b>Rating: </b> <img src="/Content/images/product-details/rating.png" alt="">
-                        <button type="submit" class="login-form" >
-                            Gönder
-                        </button>
-                       
-                    </form>
+        <div class="tab-content">
+            <div class="col-sm-12">
 
 
-                </div>
+                @*@{ Html.RenderAction("YorumlarListe", "Urunler");}*@
+
+                <form action="/Urunler/Yorumlar" method="post">
+                    <span>
+                        <input type="text" placeholder="İsminiz" name="yorumcuad" class="form-control">
+                        <input type="email" placeholder="Mail Adresiniz" name="mailadres" class="form-control">
+                        <input type="hidden" placeholder="" name="urunıd" value="@Model.Id" readonly class="form-control">
+                    </span>
+                    <textarea name="yorum" class="form-control"></textarea>
+                    <b>Rating: </b> <img src="/Content/images/product-details/rating.png" alt="">
+                    <button type="submit" class="login-form">
+                        Gönder
+                    </button>
+
+                </form>
+
+
             </div>
         </div>
+    </div>
 </div>
 @*@{ Html.RenderAction("Yorumlar", "Urunler");}*@
 

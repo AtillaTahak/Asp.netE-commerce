@@ -12,12 +12,11 @@ namespace LavornCom.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KargoTuru
+    public partial class Kargolar
     {
-        public int KargoTuruId { get; set; }
-        public System.DateTime KayıtTarihi { get; set; }
-        public string EkleyenKullaniciAdi { get; set; }
-        public string KargoAdi { get; set; }
-        public decimal KargoFiyat { get; set; }
+        public int Id { get; set; }
+        public string SirketAdi { get; set; }
+        public bool IsActive { get; set; }
+        public string Telefon { get; set; }
     }
 }

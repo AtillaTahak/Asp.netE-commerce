@@ -20,10 +20,10 @@ namespace LavornCom.Models
             this.Urunler = new HashSet<Urunler>();
         }
     
-        public int MarkaId { get; set; }
+        public int Id { get; set; }
         public string MarkaAd { get; set; }
         public string Aciklama { get; set; }
-        public string MarkaResmi { get; set; }
+        public string MarkaPicUrl { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Urunler> Urunler { get; set; }

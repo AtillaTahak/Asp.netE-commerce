@@ -13,10 +13,10 @@ namespace LavornCom.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class lavornDbEntities : DbContext
+    public partial class DB_109003_lavornEntities : DbContext
     {
-        public lavornDbEntities()
-            : base("name=lavornDbEntities")
+        public DB_109003_lavornEntities()
+            : base("name=DB_109003_lavornEntities")
         {
         }
     
@@ -25,13 +25,12 @@ namespace LavornCom.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<KargoTuru> KargoTuru { get; set; }
+        public virtual DbSet<Kargolar> Kargolar { get; set; }
         public virtual DbSet<Kategoriler> Kategoriler { get; set; }
         public virtual DbSet<Markalar> Markalar { get; set; }
-        public virtual DbSet<MesajKutusu> MesajKutusu { get; set; }
+        public virtual DbSet<Mesajlar> Mesajlar { get; set; }
         public virtual DbSet<Resimler> Resimler { get; set; }
-        public virtual DbSet<Sepet> Sepet { get; set; }
-        public virtual DbSet<Siparisler> Siparisler { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Urunler> Urunler { get; set; }
         public virtual DbSet<Uyeler> Uyeler { get; set; }
         public virtual DbSet<Yorumlar> Yorumlar { get; set; }

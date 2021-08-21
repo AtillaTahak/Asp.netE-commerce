@@ -14,29 +14,19 @@ namespace LavornCom.Models
     
     public partial class Uyeler
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Uyeler()
-        {
-            this.Sepet = new HashSet<Sepet>();
-        }
-    
-        public int UyeId { get; set; }
+        public int Id { get; set; }
         public string UyeAd { get; set; }
         public string UyeSoyad { get; set; }
-        public Nullable<int> SepedId { get; set; }
-        public string MailAdres { get; set; }
+        public string Mail { get; set; }
         public Nullable<int> SiparisId { get; set; }
         public string TcKimlikNo { get; set; }
         public string Adres { get; set; }
-        public string Rol { get; set; }
         public string TeslimatAdresi { get; set; }
         public Nullable<System.DateTime> DogumTarihi { get; set; }
         public string Sifre { get; set; }
-        public Nullable<int> Telefon1 { get; set; }
-        public Nullable<int> Telefon2 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sepet> Sepet { get; set; }
-        public virtual Siparisler Siparisler { get; set; }
+        public string Telefon { get; set; }
+        public string Sehir { get; set; }
+        public string Ulke { get; set; }
+        public string Ilce { get; set; }
     }
 }

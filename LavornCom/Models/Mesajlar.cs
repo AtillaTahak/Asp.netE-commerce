@@ -12,18 +12,12 @@ namespace LavornCom.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Kategoriler
+    public partial class Mesajlar
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Kategoriler()
-        {
-            this.Urunler = new HashSet<Urunler>();
-        }
-    
         public int Id { get; set; }
-        public string KategoriAd { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Urunler> Urunler { get; set; }
+        public string Isim { get; set; }
+        public string Mail { get; set; }
+        public string Telefon { get; set; }
+        public string Mesaj { get; set; }
     }
 }

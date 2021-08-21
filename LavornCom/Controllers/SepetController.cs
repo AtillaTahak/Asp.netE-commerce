@@ -8,7 +8,7 @@ namespace LavornCom.Controllers
 {
     public class SepetController : Controller
     {
-        lavornDbEntities db = new lavornDbEntities();
+        DB_109003_lavornEntities db = new DB_109003_lavornEntities();
         AlisverisSepeti alisverisSepeti;
 
         public AlisverisSepeti AlisverisSepeti
@@ -43,19 +43,20 @@ namespace LavornCom.Controllers
             
             return View(AlisverisSepeti.SepettekiUrunler);
         }
-       
-        public ActionResult SepeteEkle(int id)
+      
+        public ActionResult SepeteEkle(int id,int adet,string renk,string size)
         {
-          Urunler gelen=  db.Urunler.FirstOrDefault(x => x.UrunId == id);
+          Urunler gelen=  db.Urunler.FirstOrDefault(x => x.Id == id);
             if (gelen!=null)
             {
                 
                 SepetUrunu urn = new SepetUrunu();
-                urn.UrunId = gelen.UrunId;
+                urn.UrunId = gelen.Id;
                 urn.UrunAdı = gelen.UrunAd;
-                urn.Adet = 1;
-                urn.Fiyat = gelen.Fiyat;
-                
+                urn.Adet = adet;
+                urn.Fiyat = gelen.UrunFiyat;
+                urn.Renk = renk;
+                urn.Size = size;
 
                 AlisverisSepeti.SepeteEkle(urn);
             }
@@ -63,15 +64,22 @@ namespace LavornCom.Controllers
            return RedirectToAction("Index");
             
         }
-        public ActionResult SepettenKaldir(int id)
+        public ActionResult SepettenKaldir(int id,string renk,string size)
         {
-            Urunler gelen = db.Urunler.FirstOrDefault(x => x.UrunId == id);
+            Urunler gelen = db.Urunler.FirstOrDefault(x => x.Id == id);
             if (gelen!=null)
             {
                
 
-                AlisverisSepeti.SepettenKaldir(gelen.UrunId);
+                AlisverisSepeti.SepettenKaldir(gelen.Id,renk,size);
             }
+            return RedirectToAction("Index");
+        }
+        public ActionResult SepetiTemizle()
+        {
+
+
+            AlisverisSepeti.SepetiTemizle();
             return RedirectToAction("Index");
         }
     }

@@ -12,7 +12,7 @@ namespace LavornCom.Controllers
 {
     public class AdminController : Controller
     {
-        private lavornDbEntities db = new lavornDbEntities();
+        private DB_109003_lavornEntities db = new DB_109003_lavornEntities();
 
         // GET: Admin
         public ActionResult Index()

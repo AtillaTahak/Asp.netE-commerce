@@ -8,7 +8,7 @@ namespace LavornCom.Controllers
 {
     public class IletisimController : Controller
     {
-        lavornDbEntities db = new lavornDbEntities();
+        DB_109003_lavornEntities db = new DB_109003_lavornEntities();
         
         // GET: Iletisim
         public ActionResult Index()
@@ -16,17 +16,17 @@ namespace LavornCom.Controllers
           
             return View();
         }
-        public ActionResult Iletisim(string isim,string mail,string telefon,string mesaj)
-        {
-            MesajKutusu mk = new MesajKutusu();
-            mk.Isim = isim;
-            mk.MailAdres = mail;
-            mk.Telefon = telefon;
-            mk.Mesaj = mesaj;
-            db.MesajKutusu.Add(mk);
-            db.SaveChanges();
-            return View("Index");
+        //public ActionResult Iletisim(string isim,string mail,string telefon,string mesaj)
+        //{
+        //    MesajKutusu mk = new MesajKutusu();
+        //    mk.Isim = isim;
+        //    mk.MailAdres = mail;
+        //    mk.Telefon = telefon;
+        //    mk.Mesaj = mesaj;
+        //    db.MesajKutusu.Add(mk);
+        //    db.SaveChanges();
+        //    return View("Index");
             
-        }
+        //}
     }
 }

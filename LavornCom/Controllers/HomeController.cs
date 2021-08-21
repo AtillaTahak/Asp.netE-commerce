@@ -8,7 +8,7 @@ namespace LavornCom.Controllers
 {
     public class HomeController : Controller
     {
-       lavornDbEntities db =new lavornDbEntities();
+       DB_109003_lavornEntities db = new DB_109003_lavornEntities();
         // GET: Home
         public ActionResult Index()
         {

@@ -34,24 +34,25 @@ namespace LavornCom.Models
 
         }
 
-        public void SepeteEkle(SepetUrunu sepeturun/*,int adet*/)
+        public void SepeteEkle(SepetUrunu sepeturun )
         {
 
-            if (urunler.Any(u => u.UrunId == sepeturun.UrunId))
+            if (urunler.Any(u => u.UrunId == sepeturun.UrunId &&u.Renk==sepeturun.Renk&&u.Size==sepeturun.Size))
             {
-                urunler.First(u => u.UrunId == sepeturun.UrunId).Adet++;
+                var eski = urunler.First(u => u.UrunId == sepeturun.UrunId);
+                eski.Adet += sepeturun.Adet;
             }
             else
             {
                 urunler.Add(sepeturun);
             }
         }
-        public void SepettenKaldir(int Id)
+        public void SepettenKaldir(int Id,string renk,string size)
         {
         SepetUrunu sepet_urunu= urunler.FirstOrDefault(x => x.UrunId == Id);
             if (sepet_urunu!=null)
             {
-                if (sepet_urunu.Adet>1)
+                if (sepet_urunu.Adet>1&&sepet_urunu.Renk!=renk&&sepet_urunu.Size!=size)
                 {
                     sepet_urunu.Adet--;
 
@@ -64,5 +65,12 @@ namespace LavornCom.Models
             }
         }
         public SepetUrunu[] SepettekiUrunler { get { return urunler.ToArray(); }  }
+        public List<SepetUrunu> SepetiTemizle()
+        {
+            var bosalt = new List<SepetUrunu>();
+            HttpContext.Current.Session["Sepet"] = bosalt;
+            return bosalt;
+
+        }
     }
 }

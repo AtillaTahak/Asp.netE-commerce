@@ -15,11 +15,11 @@
         <div class="product-image-wrapper">
             <div class="single-products">
                 <div class="productinfo text-center">
-                    <img src="~/Content/images/shop/@item.ResimYolu" alt="">
-                    <h2>@item.Fiyat.ToString("#,##0.00") ₺</h2>
+                    <img src="~/Content/images/shop/@item.ResimUrl" alt="">
+                    <h2>@item.UrunFiyat.ToString("#,##0.00") ₺</h2>
                     <p>@item.UrunAd</p>
                    
-                    <a href="~/Urunler/Detay/@item.UrunId" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>İncele</a>
+                    <a href="~/Urunler/Detay/@item.Id" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>İncele</a>
                 </div>
 
             </div>

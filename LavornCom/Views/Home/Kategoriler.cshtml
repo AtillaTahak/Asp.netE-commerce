@@ -2,20 +2,6 @@
 @{
     Layout = null;
 }
-@Styles.Render("~/Content/css")
-@Scripts.Render("~/bundles/modernizr")
-@Scripts.Render("Content/js")
-@Styles.Render("~/Content/css/animate.css")
-@Styles.Render("~/Content/css/animate.css")
-@Styles.Render("~/Content/css/font-awesome.min.css")
-@Styles.Render("~/Content/css/main.css")
-@Styles.Render("~/Content/css/prettyPhoto.css")
-<script src="/Content/js/jquery.js"></script>
-<script src="/Content/js/bootstrap.min.js"></script>
-<script src="/Content/js/jquery.scrollUp.min.js"></script>
-<script src="/Content/js/price-range.js"></script>
-<script src="/Content/js/jquery.prettyPhoto.js"></script>
-<script src="/Content/js/main.js"></script>
 
 <a href="/Sepet/Index">
 
@@ -42,7 +28,7 @@
                         {
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="~/Urunler/Kategoriler/@item.KategoriId">@item.KategoriAd</a></h4>
+                                    <h4 class="panel-title"><a href="~/Urunler/Kategoriler/@item.Id">@item.KategoriAd</a></h4>
 
                                 </div>
                                 <hr style="border-color:darkorange;border-width:5px" />

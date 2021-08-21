@@ -20,12 +20,11 @@ namespace LavornCom.Models
             this.Urunler = new HashSet<Urunler>();
         }
     
-        public int YorumId { get; set; }
-        public string Yorum { get; set; }
-        public string MailAdres { get; set; }
+        public int Id { get; set; }
         public string YorumcuAd { get; set; }
+        public string Mail { get; set; }
         public bool IsActive { get; set; }
-        public Nullable<int> UrunId { get; set; }
+        public int UrunId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Urunler> Urunler { get; set; }
