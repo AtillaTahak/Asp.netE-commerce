@@ -1,7 +1,7 @@
 
 # Asp.netE-commerce
 
-> This blog I had made up E-commerce with Asp.net
+> I had made up E-commerce with Asp.net
  
 
 
